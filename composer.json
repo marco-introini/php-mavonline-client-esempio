@@ -1,0 +1,20 @@
+{
+    "name": "mintdev/php-mavonline-client",
+    "description": "Esempio di chiamata Rest verso MAVonline",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mintdev\\PhpMavOnlineClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marco Introini"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "guzzlehttp/guzzle": "^7.9"
+    }
+}
