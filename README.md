@@ -18,15 +18,26 @@ Il risultato sarà il seguente:
 
 Rinominare ed eventualmente modificare opportunamente il file .env.example in .env
 
-### XML della chiamata
+## XML della chiamata
 
 Create un file xml valido per la chiamata nella directory xml. Il file deve contenere l'XML generato secondo le specifiche inviate dalla Banca
 
-### Composer
+## Composer
 
 Eseguire `composer install` per installare le dipendenze
 
-### Chiamata Effettiva
+# Parametri di Header
+
+Ci sono alcuni parametri che devono essere impostati nell'header
+
+- X-Bps-Tt-IdOperazione-CodiceApplicazioneChiamante: usare il CN del certificato troncato a 8 caratteri
+- X-Bps-Tt-IdOperazione-CodiceOperazione: codice_univoco di massimo 20 caratteri
+- X-Bps-Tt-IdConversazione: come sopra
+- X-Bps-Tc-CodiceApplicazione: codice_univoco di massimo 20 caratteri
+- X-Bps-Tc-CodiceCanale: valore fisso a ITN
+- X-Bps-Tc-CodiceIstituto: valore fisso a 05696
+
+# Chiamata Effettiva
 
 Ora è possibile eseguire il file chiamata.php dentro la directory src
 
@@ -45,13 +56,13 @@ curl --location '<url>' \
 --key "./cert/POPSO_SVILUPPO/POPSO_SVILUPPO.pem" \
 -E "./cert/POPSO_SVILUPPO/POPSO_SVILUPPO_CERT.pem" \
 --cacert "./cert/PopsoRootCA01.pem" \
---header 'Content-Type:  application/json' \
---header 'X-Bps-Tt-IdOperazione-CodiceApplicazioneChiamante: COD_APPLICAZIONE' \
---header 'X-Bps-Tt-IdOperazione-CodiceOperazione:  codice_univoco' \
---header 'X-Bps-Tt-IdConversazione:  codice_univoco' \
---header 'X-Bps-Tc-CodiceApplicazione: COD_APPLICAZIONE' \
---header 'X-Bps-Tc-CodiceCanale:  ITN' \
---header 'X-Bps-Tc-CodiceIstituto:  05696' \
+Content-Type:  application/json' \
+X-Bps-Tt-IdOperazione-CodiceApplicazioneChiamante: COD_APPLICAZIONE' \
+X-Bps-Tt-IdOperazione-CodiceOperazione:  codice_univoco' \
+X-Bps-Tt-IdConversazione:  codice_univoco' \
+X-Bps-Tc-CodiceApplicazione: COD_APPLICAZIONE' \
+X-Bps-Tc-CodiceCanale:  ITN' \
+X-Bps-Tc-CodiceIstituto:  05696' \
 --data '{
   "IdTransazione": "codice_univoco",
   "CodiceServizio": "00001",
