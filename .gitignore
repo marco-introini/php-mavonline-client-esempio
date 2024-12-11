@@ -1,7 +1,7 @@
 /vendor/
 .env
 .idea
-./PASSWORD.md
-./cert/POPSO_SVILUPPO
-./xml
+/cert/POPSO_SVILUPPO
+/xml
 
+/PASSWORD.md

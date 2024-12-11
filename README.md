@@ -1,12 +1,12 @@
 # Esempio di client per accedere a IUVOnline BPS
 
-## Chiamata in PHP
+# Configurazione
 
-### File OpenAPI
+## File OpenAPI
 
-E' presente
+E' presente nella directory openAPI uno zip cifrato con le specifiche OpenAPI
 
-### Installazione certificati
+## Installazione certificati
 
 Decomprimere i certificati (POPSO_SVILUPPO) nella directory cert.
 
@@ -14,7 +14,7 @@ Il risultato sarà il seguente:
 
 ![certificati.png](img/certificati.png)
 
-### Environment
+## Environment
 
 Rinominare ed eventualmente modificare opportunamente il file .env.example in .env
 
@@ -34,14 +34,14 @@ Ora è possibile eseguire il file chiamata.php dentro la directory src
 php chiamata.php
 ```
 
-## Chiamata via cUrl
+# Chiamata via cUrl
 
 È possibile verificare il funzionamento del servizio eseguendo una chiamata usando cUrl.
 
 Si faccia riferimento a questo esempio:
 
 ```bash
-curl --location 'https://apigwinbounddev.popso.it/Mav/MavOnline/v2' \
+curl --location '<url>' \
 --key "./cert/POPSO_SVILUPPO/POPSO_SVILUPPO.pem" \
 -E "./cert/POPSO_SVILUPPO/POPSO_SVILUPPO_CERT.pem" \
 --cacert "./cert/PopsoRootCA01.pem" \
