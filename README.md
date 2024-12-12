@@ -1,4 +1,4 @@
-# Esempio di client per accedere a IUVOnline BPS
+# Esempio di client per accedere a MAVOnline v2 BPS
 
 # Configurazione
 
