@@ -2,6 +2,10 @@
 
 # Configurazione
 
+## Prerequisiti
+
+Per poter aprire i file zip sono necessarie delle password, che vi saranno fornite da personale Banca incaricato
+
 ## File OpenAPI
 
 E' presente nella directory openAPI uno zip cifrato con le specifiche OpenAPI
@@ -43,31 +47,6 @@ Ora è possibile eseguire il file chiamata.php dentro la directory src
 
 ```bash
 php chiamata.php
-```
-
-# Chiamata via cUrl
-
-È possibile verificare il funzionamento del servizio eseguendo una chiamata usando cUrl.
-
-Si faccia riferimento a questo esempio:
-
-```bash
-curl --location '<url>' \
---key "./cert/POPSO_SVILUPPO/POPSO_SVILUPPO.pem" \
--E "./cert/POPSO_SVILUPPO/POPSO_SVILUPPO_CERT.pem" \
---cacert "./cert/PopsoRootCA01.pem" \
-Content-Type:  application/json' \
-X-Bps-Tt-IdOperazione-CodiceApplicazioneChiamante: COD_APPLICAZIONE' \
-X-Bps-Tt-IdOperazione-CodiceOperazione:  codice_univoco' \
-X-Bps-Tt-IdConversazione:  codice_univoco' \
-X-Bps-Tc-CodiceApplicazione: COD_APPLICAZIONE' \
-X-Bps-Tc-CodiceCanale:  ITN' \
-X-Bps-Tc-CodiceIstituto:  05696' \
---data '{
-  "IdTransazione": "codice_univoco",
-  "CodiceServizio": "00001",
-  "XmlMavOnline": "IMMETTERE QUI XML CODIFICATO IN BASE64"
-}'
 ```
 
 ## Certificati CA produzione
