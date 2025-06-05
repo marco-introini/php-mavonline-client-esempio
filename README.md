@@ -37,7 +37,7 @@ Ci sono alcuni parametri che devono essere impostati nell'header
 - X-Bps-Tt-IdOperazione-CodiceApplicazioneChiamante: usare il CN del certificato troncato a 8 caratteri
 - X-Bps-Tt-IdOperazione-CodiceOperazione: codice_univoco di massimo 20 caratteri
 - X-Bps-Tt-IdConversazione: come sopra
-- X-Bps-Tc-CodiceApplicazione: codice_univoco di massimo 20 caratteri
+- X-Bps-Tc-CodiceApplicazione: usare lo stesso di X-Bps-Tt-IdOperazione-CodiceApplicazioneChiamante
 - X-Bps-Tc-CodiceCanale: valore fisso a ITN
 - X-Bps-Tc-CodiceIstituto: valore fisso a 05696
 
